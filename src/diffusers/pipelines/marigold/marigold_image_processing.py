@@ -70,7 +70,7 @@ class MarigoldImageProcessor(ConfigMixin):
         """
         Convert a PyTorch tensor to a NumPy image.
         """
-        images = images.cpu().permute(0, 2, 3, 1).float().numpy()
+        images = images.permute(0, 2, 3, 1).float().cpu().numpy()
         return images
 
     @staticmethod
